@@ -3,14 +3,14 @@ import pandas as pd
 import pickle, json
 
 # loading all files
-with open('./model/columns.json', 'r') as f:
+with open('columns.json', 'r') as f:
     columns = json.load(f)['columns']
     locations = columns[3:]
 
-with open('./model/house_price_model.pickle', 'rb') as f:
+with open('house_price_model.pickle', 'rb') as f:
     model = pickle.load(f)
 
-df = pd.read_csv('./data/cleaned_data.csv')
+df = pd.read_csv('cleaned_data.csv')
 
 def predict_price(location, sqft, bath, room):
     if sqft.isnumeric():
