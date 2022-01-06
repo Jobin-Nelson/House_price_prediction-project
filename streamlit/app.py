@@ -10,9 +10,7 @@ with open('./model/columns.json', 'r') as f:
 with open('./model/house_price_model.pickle', 'rb') as f:
     model = pickle.load(f)
 
-df = pd.read_csv('../data/Bengaluru_House_Data.csv')
-df['rooms'] = df['size'].map(lambda x: int(x.split(' ')[0]), na_action='ignore')
-df.drop(['area_type', 'society', 'balcony', 'availability', 'size'], axis=1, inplace=True)
+df = pd.read_csv('./data/cleaned_data.csv')
 
 def predict_price(location, sqft, bath, room):
     if sqft.isnumeric():
@@ -57,4 +55,4 @@ with user_specified:
 with dataset:
     st.markdown("## [Dataset](https://www.kaggle.com/amitabhajoy/bengaluru-house-price-data)")
     st.write("Take a peek at the dataset on which the model was trained")
-    st.write(df)
+    st.write(df.head(10))
