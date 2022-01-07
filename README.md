@@ -25,4 +25,4 @@ I’ve taken the dataset from Kaggle datasets. Required some data cleaning to ma
 
 Used Streamlit to build the web app and deployed using Heroku platform by connecting to the heroku branch of this repo. You can view the app [here](https://bangalore-price-prediction.herokuapp.com/)
 
-*Tools: Scikit-learn, Streamlit, Optuna,* *Pandas*.svg
+*Tools: Scikit-learn, Streamlit, Optuna,* *Pandas*
