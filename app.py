@@ -1,17 +1,17 @@
 import streamlit as st
 import pandas as pd
-import pickle, json
+import joblib, json
 
 # loading all files
 with open('columns.json', 'r') as f:
     columns = json.load(f)['columns']
     locations = columns[3:]
 
-with open('house_price_model.pickle', 'rb') as f:
-    model = pickle.load(f)
+model = joblib.load('gbr_model.joblib')
 
 df = pd.read_csv('cleaned_data.csv')
 
+# creating prediction function
 def predict_price(location, sqft, bath, room):
     if sqft.isnumeric():
         sqft = float(sqft)
@@ -23,8 +23,7 @@ def predict_price(location, sqft, bath, room):
             loc_ind = -1
         
         x[0], x[1], x[2], x[loc_ind] = sqft, bath, room, 1
-        pred = pd.DataFrame([x], columns=columns)
-        return round(model.predict(pred)[0],2)
+        return round(model.predict([x])[0],2)
     else:
         return 'Quit it, Give me a number'
 
