@@ -1,9 +1,11 @@
 import streamlit as st
 import pandas as pd
 import joblib, json
+from Pathlib import Path
 
 # loading all files
-with open('./model/columns.json', 'r') as f:
+columns_file = Path(__file__).parent / 'model' / 'columns.json'
+with open(columns_file, 'r') as f:
     columns = json.load(f)['columns']
     locations = columns[3:]
 
