@@ -1,4 +1,4 @@
-# [House Price Prediction](https://bangalore-price-prediction.herokuapp.com/)
+# [House Price Prediction](https://house-price-prediction.streamlit.app/)
 ![image](images/app_dark.jpeg)
 This app predicts house prices in Bangalore with user-specified values
 
@@ -23,6 +23,6 @@ I’ve taken the dataset from Kaggle datasets. Required some data cleaning to ma
 
 ## [Web app](https://bangalore-price-prediction.herokuapp.com/)
 
-Used Streamlit to build the web app and deployed using Heroku platform by connecting to the heroku branch of this repo. You can view the app [here](https://bangalore-price-prediction.herokuapp.com/)
+Used Streamlit to build the web app and deployed using Heroku platform by connecting to the heroku branch of this repo. You can view the app [here](https://house-price-prediction.streamlit.app/)
 
 *Tools: Scikit-learn, Streamlit, Optuna,* *Pandas*
