@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib, json
-from Pathlib import Path
+from pathlib import Path
 
 # loading all files
 columns_file = Path(__file__).parent / 'model' / 'columns.json'
