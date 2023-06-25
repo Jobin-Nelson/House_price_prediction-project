@@ -5,13 +5,17 @@ from pathlib import Path
 
 # loading all files
 columns_file = Path(__file__).parent / 'model' / 'columns.json'
+joblib_file = Path(__file__).parent / 'model' / 'gbr_model.joblib'
+cleaned_data_file = Path(__file__).parent / 'data' / 'cleaned_data.csv'
+
 with open(columns_file, 'r') as f:
     columns = json.load(f)['columns']
     locations = columns[3:]
 
-model = joblib.load('./model/gbr_model.joblib')
 
-df = pd.read_csv('./data/cleaned_data.csv')
+model = joblib.load(joblib_file)
+
+df = pd.read_csv(cleaned_data_file)
 
 # creating prediction function
 def predict_price(location, sqft, bath, room):
